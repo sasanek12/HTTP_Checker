@@ -16,23 +16,23 @@ def main():
                 headers.append(item.text)
                 rows.append(item.find_next_sibling().text)
             try:
-                index = headers.index("Cisnienie")
+                index = headers.index("Ciśnienie")
             except ValueError:
-                print("Nie znaleziono cisnienia w tabeli")
+                print("Nie znaleziono ciśnienia w tabeli")
                 sys.exit(1)
             temp = rows[index].split()
             result = temp[0]
             if int(result) > 1090 or int(result) < 870:
-                print("Cisnienie przyjmuje niemożliwe wartości")
+                print("Ciśnienie przyjmuje niemożliwe wartości")
                 sys.exit(1)
-            print("Cisnienie w hPa na lotnisku w Balicach:")
-            sys.stdout.write(result)
+            print("Ciśnienie w hPa na lotnisku w Balicach:")
+            print(result)
             sys.exit(0)
         else:
-            print("Strona nie zawiera przewidywanej zawartosci")
+            print("Strona nie zawiera przewidywanej zawartości")
             sys.exit(1)
     else:
-        print("Strona nie dziala poprawnie")
+        print("Strona nie działa poprawnie")
         sys.exit(1)
 
 
